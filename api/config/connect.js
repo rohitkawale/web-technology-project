@@ -14,14 +14,14 @@ function connectNow(next){
         databaseConnection.users = db.collection('users');
         databaseConnection.area = db.collection('area');
         databaseConnection.constants = {sample:'hello'};
-        console.log('got db connection: ',(databaseConnection!=false));
-        console.log('db users:',mongoose.connection.db.collection('users').find());
+        //console.log('got db connection: ',(databaseConnection!=false));
+        //console.log('db users:',mongoose.connection.db.collection('users').find());
         mongoose.connection.db.collection('userCollection').insert({
-  username: 'user1',
-  firstName: 'Steve',
-  lastName: 'LastName', 
+ // username: 'user1',
+  //firstName: 'Steve',
+  //lastName: 'LastName', 
 });
-        console.log("inseerted");
+        //console.log("inseerted");
         /*mongoose.connection.db.collection('userCollection').update(
   {someFilterProperty: true},
   {$set: {

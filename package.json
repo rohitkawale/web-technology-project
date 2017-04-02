@@ -11,6 +11,8 @@
     "angular": "^1.6.3",
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "express-jwt": "^5.1.0",
+    "jsonwebtoken": "^7.3.0",
     "mongoose": "^4.9.0"
   },
   "devDependencies": {},

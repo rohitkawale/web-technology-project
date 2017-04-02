@@ -1,6 +1,4 @@
-/**
- * Created by Omkar Dusane on 27-Oct-16.
- */
+
 
 var sampleApp = angular.module('sampleApp',
     [
@@ -33,9 +31,10 @@ sampleApp.config(function ($routeProvider) {
         ;
 
 });
-
+//var self;
 sampleApp.service('api',function ($http) {
     // sample http api POST request
+    var self =this
     this.sampleHttpApiCallGet = function (jsonData,next){
         var settings = {
             "async": true,
@@ -104,7 +103,10 @@ sampleApp.service('api',function ($http) {
             "data": $.param(user)
         };
         $http(settings).success(function (response) {
-            console.log(response.name);
+            console.log(response);
+            console.log(response.token);
+            self.token = response.token ;
+            localStorage.setItem('token',response.token)
             if(response.ok){
                 alert("success");
             }else{
@@ -160,7 +162,8 @@ function signupCtrl($scope,api){
 }
 function loginCtrl($scope,api){
     $scope.sample = "new page new module new ctrl";
-    $scope.meth2()=function(x){
-        $scope.status='logged in';
+    $scope.meth2=function(x){
+        //$scope.status='logged in';
+        api.login(x);
     }
 }
