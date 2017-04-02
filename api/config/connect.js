@@ -34,15 +34,15 @@ function connectNow(next){
         next();
     });
 };
-/*function mockConnect(next){
+function mockConnect(next){
     console.log("connected")
     user={name:'rohit'};
     next();
-}*/
+}
 
 module.exports = {
-  connect: connectNow,
+  connect: mockConnect,
   get : ()=>{
-    return databaseConnection
+    return user
   }
 } ;

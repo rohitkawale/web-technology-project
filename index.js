@@ -18,7 +18,12 @@ dbconn.connect(function(){
   app.use('/api/',user_api);
 });
 
+var port=process.env.PORT || 1337;
 
-app.listen(8000,function(){
-	console.log("hello 8000")
+app.get('/hello',function(req,res){
+	res.json({ok:true,message:'hello'});
+})
+
+app.listen(port,function(){
+	console.log("hello 1337")
 });
